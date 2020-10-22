@@ -1,0 +1,20 @@
+@model IEnumerable<Movie>
+@{
+    ViewData["Title"] = "Index";
+    var d1 = (string)ViewBag.Metin1;
+}
+
+
+<div class="row">
+<div class="col-md-3">
+    @*@Html.Partial("_menu", Model.Categories)*@
+    @await Component.InvokeAsync("CategoryMenu")
+    @*<partial name="_menu" model="Model.Categories" />*@
+</div>
+<div class="col-md-9">
+    @Html.Partial("_movies", Model)
+    @*<partial name="_movies" model="Model.Movies" />*@
+
+</div>
+
+ </div>
